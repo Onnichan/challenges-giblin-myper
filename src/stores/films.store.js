@@ -29,8 +29,8 @@ export const useFilmStore = defineStore("films", {
       console.log(this.films);
     },
 
-    setLoading(value){
+    setLoading(value) {
       this.loading = value;
-    }
+    },
   },
 });

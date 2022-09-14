@@ -7,7 +7,6 @@ import { useFilmStore } from "../stores/films.store";
 const store = useFilmStore();
 const { getAllFilms, setLoading } = useFilmStore();
 
-
 onBeforeMount(() => {
   getAllFilms();
   setLoading(false);

@@ -10,5 +10,5 @@ const getFilm = (id) => {
 
 export default {
   getfilms,
-  getFilm
-}
+  getFilm,
+};

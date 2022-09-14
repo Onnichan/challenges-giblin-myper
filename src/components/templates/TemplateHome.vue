@@ -1,13 +1,12 @@
 <script setup>
-import OrganismGridCard from '../organisms/Grid/OrganismGridCard.vue';
+import OrganismGridCard from "../organisms/Grid/OrganismGridCard.vue";
 
 defineProps({
-  data:{
+  data: {
     type: Object,
-    required: true
-  }
-})
-
+    required: true,
+  },
+});
 </script>
 <template>
   <main class="main">
@@ -16,6 +15,4 @@ defineProps({
     </div>
   </main>
 </template>
-<style>
-
-</style>
+<style></style>

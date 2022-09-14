@@ -11,17 +11,21 @@ console.log(props.film);
 
 <template>
   <div class="card">
-    <img :src="props.film.image" alt="image" class="card-image" loading="lazy"/>
-    <span>{{props.film.title}}</span>
+    <img
+      :src="props.film.image"
+      alt="image"
+      class="card-image"
+      loading="lazy"
+    />
+    <span>{{ props.film.title }}</span>
   </div>
 </template>
 <style>
-
-.card{
+.card {
   width: 100%;
 }
 
-.card-image{
+.card-image {
   display: block;
   width: 100%;
 }

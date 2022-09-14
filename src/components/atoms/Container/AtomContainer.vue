@@ -4,7 +4,7 @@
   </div>
 </template>
 <style>
-  .container{
-    padding: 1em;
-  }
+.container {
+  padding: 1em;
+}
 </style>

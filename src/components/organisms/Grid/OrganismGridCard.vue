@@ -13,16 +13,15 @@ const props = defineProps({
   <section class="grid-section">
     <AtomContainer>
       <div class="grid">
-        <MoleculeCard v-for="film in props.data" :key="film.id" :film="film"/>
+        <MoleculeCard v-for="film in props.data" :key="film.id" :film="film" />
       </div>
     </AtomContainer>
   </section>
 </template>
 <style>
-
-  .grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2em;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
 </style>
