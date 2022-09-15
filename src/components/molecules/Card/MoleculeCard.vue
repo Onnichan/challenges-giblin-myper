@@ -39,7 +39,7 @@ const props = defineProps({
 
 .card-content {
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .card-image {
@@ -90,5 +90,11 @@ const props = defineProps({
   display: block;
   margin: 0 auto;
   color: rgba(245, 245, 245, 0.758);
+}
+
+@media (min-width: 750px) {
+  .card-content {
+    font-size: 0.8rem;
+  }
 }
 </style>
