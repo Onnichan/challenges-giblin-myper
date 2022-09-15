@@ -39,7 +39,7 @@ function handleSearch() {
 }
 </script>
 <template>
-  <div class="input-icon">
+  <!-- <div class="input-icon"> -->
     <!-- <slot></slot>
   </div> -->
     <div class="search">
@@ -50,7 +50,7 @@ function handleSearch() {
         v-model="search"
       />
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 <style>
 .search {
@@ -70,13 +70,13 @@ function handleSearch() {
 }
 .search__input {
   outline: none;
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 20px;
   width: 100%;
   height: 100%;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border: 1px solid gray;
-  color: lightseagreen;
+  color: black;
 }
 .search__input:focus {
   border: 1px solid black;

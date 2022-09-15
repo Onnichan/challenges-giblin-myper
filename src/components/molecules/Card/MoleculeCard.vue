@@ -28,6 +28,9 @@ const props = defineProps({
 <style>
 .card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card:hover {
@@ -45,10 +48,27 @@ const props = defineProps({
   border-radius: 4px;
 }
 
+.card-media::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  cursor: pointer;
+  transition: background-color 1s ease-in-out;
+}
+.card-media:hover::after {
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
 .card-content__director,
 .card-content__year,
 .card-content__score {
   position: absolute;
+  z-index: 10;
+
 }
 
 .card-content__director {
@@ -68,6 +88,8 @@ const props = defineProps({
 
 .card-title {
   /* padding: 20px; */
+  display: block;
   margin: 0 auto;
+  color: rgba(245, 245, 245, 0.758);
 }
 </style>

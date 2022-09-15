@@ -11,5 +11,8 @@ La finalidad de este proyecto es mostrar la data que viene desde la api pública
 - VUE 3(Composition API)
 - PINIA
 - HUSKY, PRETTIER, ESLINT
+- AXIOS
 
 # DEPLOY
+
+Puedes ver el proyecto en producción por [aqui](https://challenges-giblin-myper.vercel.app/)
