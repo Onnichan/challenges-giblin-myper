@@ -40,16 +40,16 @@ function handleSearch() {
 </script>
 <template>
   <!-- <div class="input-icon"> -->
-    <!-- <slot></slot>
+  <!-- <slot></slot>
   </div> -->
-    <div class="search">
-      <input
-        type="search"
-        class="search__input"
-        @keyup.enter="handleSearch"
-        v-model="search"
-      />
-    </div>
+  <div class="search">
+    <input
+      type="search"
+      class="search__input"
+      @keyup.enter="handleSearch"
+      v-model="search"
+    />
+  </div>
   <!-- </div> -->
 </template>
 <style>

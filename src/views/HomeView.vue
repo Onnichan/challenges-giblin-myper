@@ -19,5 +19,9 @@ function filtered() {
 </script>
 <template>
   <span v-if="store.loading">...loading</span>
-  <TemplateHome v-else :data="filtered()" :notFound="store.notFound"></TemplateHome>
+  <TemplateHome
+    v-else
+    :data="filtered()"
+    :notFound="store.notFound"
+  ></TemplateHome>
 </template>

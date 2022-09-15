@@ -68,7 +68,6 @@ const props = defineProps({
 .card-content__score {
   position: absolute;
   z-index: 10;
-
 }
 
 .card-content__director {
