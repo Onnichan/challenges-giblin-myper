@@ -10,7 +10,7 @@ defineProps({
   notFound: {
     type: Boolean,
     required: true,
-  }
+  },
 });
 </script>
 <template>

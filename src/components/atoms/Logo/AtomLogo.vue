@@ -1,5 +1,4 @@
 <script setup>
-
 defineProps({
   width: {
     type: String,
@@ -174,7 +173,7 @@ defineProps({
   </svg>
 </template>
 <style>
-  .logo{
-    fill: rgb(28, 222, 28);
-  }
+.logo {
+  fill: rgb(28, 222, 28);
+}
 </style>

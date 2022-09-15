@@ -12,10 +12,9 @@ onMounted(() => {
   }
 });
 
-function filtered(){
+function filtered() {
   return store.filmsFiltered.length > 0 ? store.filmsFiltered : store.films;
 }
-
 </script>
 <template>
   <!-- <span v-if="store.loading">...loading</span> -->

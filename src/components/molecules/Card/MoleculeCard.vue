@@ -30,11 +30,11 @@ const props = defineProps({
   width: 100%;
 }
 
-.card:hover{
+.card:hover {
   cursor: pointer;
 }
 
-.card-content{
+.card-content {
   position: relative;
   font-size: 0.8rem;
 }
@@ -45,26 +45,28 @@ const props = defineProps({
   border-radius: 4px;
 }
 
-.card-content__director, .card-content__year, .card-content__score{
+.card-content__director,
+.card-content__year,
+.card-content__score {
   position: absolute;
 }
 
-.card-content__director{
+.card-content__director {
   bottom: 10px;
   right: 10px;
 }
 
-.card-content__year{
+.card-content__year {
   bottom: 10px;
   left: 10px;
 }
 
-.card-content__score{
+.card-content__score {
   top: 10px;
   right: 10px;
 }
 
-.card-title{
+.card-title {
   /* padding: 20px; */
   margin: 0 auto;
 }

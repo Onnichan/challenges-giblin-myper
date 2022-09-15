@@ -5,7 +5,7 @@ export const useFilmStore = defineStore("films", {
   state: () => ({
     films: [],
     filmsFiltered: [],
-    search: '',
+    search: "",
     error: null,
     loading: true,
     notFound: false,
@@ -26,9 +26,9 @@ export const useFilmStore = defineStore("films", {
         });
     },
 
-    getLengthState: state => {
+    getLengthState: (state) => {
       return state.filmsFiltered.length;
-    }
+    },
   },
   /** this property mutate the state */
   actions: {
@@ -41,21 +41,20 @@ export const useFilmStore = defineStore("films", {
       this.loading = value;
     },
 
-    setFilmsFiltered(){
+    setFilmsFiltered() {
       this.filmsFiltered = this.filterFilms();
     },
 
-    setNotFound(value){
+    setNotFound(value) {
       this.notFound = value;
     },
 
-    setSearching(value){
+    setSearching(value) {
       this.searching = value;
     },
 
-    setSearch(value){
+    setSearch(value) {
       this.search = value;
-    }
-
+    },
   },
 });

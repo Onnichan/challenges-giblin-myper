@@ -1,9 +1,8 @@
 <script setup>
-import AtomLogo from '../../atoms/Logo/AtomLogo.vue';
-import MoleculeInputIcon from '../../molecules/InputIcon/MoleculeInputIcon.vue';
-import AtomInput from '../../atoms/Input/AtomInput.vue';
-import AtomContainer from '../../atoms/Container/AtomContainer.vue';
-
+import AtomLogo from "../../atoms/Logo/AtomLogo.vue";
+import MoleculeInputIcon from "../../molecules/InputIcon/MoleculeInputIcon.vue";
+import AtomInput from "../../atoms/Input/AtomInput.vue";
+import AtomContainer from "../../atoms/Container/AtomContainer.vue";
 </script>
 <template>
   <header class="header-section">
@@ -18,15 +17,15 @@ import AtomContainer from '../../atoms/Container/AtomContainer.vue';
   </header>
 </template>
 <style>
-.header-section__wrapper{
+.header-section__wrapper {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
 }
 
-@media (min-width: 750px){
-  .header-section__wrapper{
+@media (min-width: 750px) {
+  .header-section__wrapper {
     flex-direction: row;
   }
 }

@@ -4,7 +4,7 @@ import { ref, watch } from "vue";
 
 const search = ref("");
 // const store = useFilmStore();
-const { setFilmsFiltered, setNotFound, setSearching, filterFilms} =
+const { setFilmsFiltered, setNotFound, setSearching, filterFilms } =
   useFilmStore();
 
 // function handleChange(){
@@ -14,10 +14,10 @@ const { setFilmsFiltered, setNotFound, setSearching, filterFilms} =
 // }
 
 watch(search, (newSearch, oldSearch) => {
-  if(newSearch.length === 0){
+  if (newSearch.length === 0) {
     handleSearch();
   }
-})
+});
 
 function handleSearch() {
   if (!search.value) {
@@ -25,7 +25,7 @@ function handleSearch() {
     setNotFound(false);
     console.log("aqui en el search");
   } else {
-    console.log("aqui en el search");    
+    console.log("aqui en el search");
     setNotFound(false);
     setSearching(true);
     console.log("aqui en el target");
