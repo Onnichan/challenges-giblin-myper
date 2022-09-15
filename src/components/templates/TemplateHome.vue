@@ -1,18 +1,24 @@
 <script setup>
 import OrganismGridCard from "../organisms/Grid/OrganismGridCard.vue";
+import AtomContainer from "../atoms/Container/AtomContainer.vue";
 
 defineProps({
   data: {
     type: Object,
     required: true,
   },
+  notFound: {
+    type: Boolean,
+    required: true,
+  }
 });
 </script>
 <template>
   <main class="main">
-    <div class="container">
-      <OrganismGridCard :data="data"></OrganismGridCard>
-    </div>
+    <AtomContainer>
+      <div v-if="notFound">No se encontraron resultados</div>
+      <OrganismGridCard v-else :data="data"></OrganismGridCard>
+    </AtomContainer>
   </main>
 </template>
 <style></style>

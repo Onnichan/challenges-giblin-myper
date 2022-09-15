@@ -1,16 +1,33 @@
 <script setup>
-import MoleculeCard from "../../molecules/Card/MoleculeCard.vue";
+import AtomLogo from '../../atoms/Logo/AtomLogo.vue';
+import MoleculeInputIcon from '../../molecules/InputIcon/MoleculeInputIcon.vue';
+import AtomInput from '../../atoms/Input/AtomInput.vue';
+import AtomContainer from '../../atoms/Container/AtomContainer.vue';
 
-defineProps({
-  data: {
-    type: Object,
-    required: true,
-  },
-});
 </script>
 <template>
   <header class="header-section">
-    <MoleculeCard v-for="film in data" :key="film.id" :film="film" />
+    <AtomContainer>
+      <div class="header-section__wrapper">
+        <AtomLogo class="logo" width="300px"></AtomLogo>
+        <MoleculeInputIcon>
+          <AtomInput />
+        </MoleculeInputIcon>
+      </div>
+    </AtomContainer>
   </header>
 </template>
-<style></style>
+<style>
+.header-section__wrapper{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+@media (min-width: 750px){
+  .header-section__wrapper{
+    flex-direction: row;
+  }
+}
+</style>

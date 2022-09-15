@@ -4,8 +4,12 @@ import { defineStore } from "pinia";
 export const useFilmStore = defineStore("films", {
   state: () => ({
     films: [],
+    filmsFiltered: [],
+    search: '',
     error: null,
     loading: true,
+    notFound: false,
+    searching: false,
   }),
   /** This property get thing of state and not mutate the state */
   getters: {
@@ -21,6 +25,10 @@ export const useFilmStore = defineStore("films", {
           );
         });
     },
+
+    getLengthState: state => {
+      return state.filmsFiltered.length;
+    }
   },
   /** this property mutate the state */
   actions: {
@@ -32,5 +40,22 @@ export const useFilmStore = defineStore("films", {
     setLoading(value) {
       this.loading = value;
     },
+
+    setFilmsFiltered(){
+      this.filmsFiltered = this.filterFilms();
+    },
+
+    setNotFound(value){
+      this.notFound = value;
+    },
+
+    setSearching(value){
+      this.searching = value;
+    },
+
+    setSearch(value){
+      this.search = value;
+    }
+
   },
 });

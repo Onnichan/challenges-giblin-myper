@@ -1,18 +1,23 @@
 <script setup>
 import TemplateHome from "../components/templates/TemplateHome.vue";
-import { onBeforeMount } from "vue";
-import {} from "pinia";
+import { onMounted } from "vue";
 import { useFilmStore } from "../stores/films.store";
 
 const store = useFilmStore();
-const { getAllFilms, setLoading } = useFilmStore();
+const { getAllFilms } = useFilmStore();
 
-onBeforeMount(() => {
-  getAllFilms();
-  setLoading(false);
+onMounted(() => {
+  if (!store.searching) {
+    getAllFilms();
+  }
 });
+
+function filtered(){
+  return store.filmsFiltered.length > 0 ? store.filmsFiltered : store.films;
+}
+
 </script>
 <template>
-  <span v-if="store.loading">...loading</span>
-  <TemplateHome v-else :data="store.films"></TemplateHome>
+  <!-- <span v-if="store.loading">...loading</span> -->
+  <TemplateHome :data="filtered()" :notFound="store.notFound"></TemplateHome>
 </template>
