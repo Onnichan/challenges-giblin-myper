@@ -1,8 +1,8 @@
 import { ApiRequest } from "./";
 
 const getfilms = (limit = 250) => {
-  return ApiRequest.get('films',{
-    params: {limit}
+  return ApiRequest.get("films", {
+    params: { limit },
   });
 };
 
