@@ -22,6 +22,7 @@ import AtomContainer from "../../atoms/Container/AtomContainer.vue";
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  gap: 50px;
 }
 
 @media (min-width: 750px) {

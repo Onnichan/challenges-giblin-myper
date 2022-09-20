@@ -4,11 +4,12 @@ import { onMounted } from "vue";
 import { useFilmStore } from "../stores/films.store";
 
 const store = useFilmStore();
-const { getAllFilms } = useFilmStore();
+const { getAllFilms, setLoading } = useFilmStore();
 
 onMounted(() => {
   if (!store.searching) {
     getAllFilms();
+    setLoading(false);
   }
 });
 
@@ -17,6 +18,10 @@ function filtered() {
 }
 </script>
 <template>
-  <!-- <span v-if="store.loading">...loading</span> -->
-  <TemplateHome :data="filtered()" :notFound="store.notFound"></TemplateHome>
+  <span v-if="store.loading">...loading</span>
+  <TemplateHome
+    v-else
+    :data="filtered()"
+    :notFound="store.notFound"
+  ></TemplateHome>
 </template>

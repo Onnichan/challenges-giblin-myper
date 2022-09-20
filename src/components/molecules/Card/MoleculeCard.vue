@@ -30,6 +30,9 @@ function redirectFilm() {}
 <style>
 .card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card:hover {
@@ -38,7 +41,7 @@ function redirectFilm() {}
 
 .card-content {
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .card-image {
@@ -47,10 +50,26 @@ function redirectFilm() {}
   border-radius: 4px;
 }
 
+.card-media::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  cursor: pointer;
+  transition: background-color 1s ease-in-out;
+}
+.card-media:hover::after {
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
 .card-content__director,
 .card-content__year,
 .card-content__score {
   position: absolute;
+  z-index: 10;
 }
 
 .card-content__director {
@@ -70,6 +89,14 @@ function redirectFilm() {}
 
 .card-title {
   /* padding: 20px; */
+  display: block;
   margin: 0 auto;
+  color: rgba(245, 245, 245, 0.758);
+}
+
+@media (min-width: 750px) {
+  .card-content {
+    font-size: 0.8rem;
+  }
 }
 </style>
