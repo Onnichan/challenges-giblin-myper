@@ -5,7 +5,7 @@ const getfilms = (limit = 40) => {
 };
 
 const getFilm = (id) => {
-  return ApiRequest.get(`film/${id}`);
+  return ApiRequest.get(`films/${id}`);
 };
 
 export default {

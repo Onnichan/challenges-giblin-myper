@@ -5,10 +5,14 @@ const props = defineProps({
     required: true,
   },
 });
+
+function redirectFilm(){
+  
+}
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="redirectFilm">
     <div class="card-content">
       <div class="card-media">
         <img
