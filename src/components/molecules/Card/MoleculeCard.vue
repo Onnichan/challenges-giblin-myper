@@ -6,9 +6,7 @@ const props = defineProps({
   },
 });
 
-function redirectFilm(){
-  
-}
+function redirectFilm() {}
 </script>
 
 <template>
