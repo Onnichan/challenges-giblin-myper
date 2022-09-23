@@ -1,4 +1,4 @@
-# giblin-myper
+# ghibli-myper
 
 Hola 😁 bienvenido a mi proyecto para el challenge de Myper
 La finalidad de este proyecto es mostrar la data que viene desde la api pública de studio giblin
