@@ -1,56 +1,14 @@
 <script setup>
-import { useFilmStore } from "../../../stores/films.store";
-import { ref, watch } from "vue";
-
-const search = ref("");
-// const store = useFilmStore();
-const { setFilmsFiltered, setNotFound, setSearching, filterFilms } =
-  useFilmStore();
-
-// function handleChange(){
-//   if(search.value.length === 0){
-//     handleSearch();
-//   }
-// }
-
-watch(search, (newSearch, oldSearch) => {
-  if (newSearch.length === 0) {
-    handleSearch();
-  }
-});
-
-function handleSearch() {
-  if (!search.value) {
-    setFilmsFiltered([]);
-    setNotFound(false);
-    console.log("aqui en el search");
-  } else {
-    console.log("aqui en el search");
-    setNotFound(false);
-    setSearching(true);
-    console.log("aqui en el target");
-    if (!filterFilms()) {
-      setNotFound(true);
-    } else {
-      setFilmsFiltered();
-    }
-    setSearching(false);
-  }
-}
+import AtomInput from "../../atoms/Input/AtomInput.vue";
 </script>
 <template>
-  <!-- <div class="input-icon"> -->
-  <!-- <slot></slot>
-  </div> -->
   <div class="search">
-    <input
+    <AtomInput
       type="search"
       class="search__input"
-      @keyup.enter="handleSearch"
-      v-model="search"
+      placeholder="Ingrese su búsqueda"
     />
   </div>
-  <!-- </div> -->
 </template>
 <style>
 .search {
@@ -59,7 +17,7 @@ function handleSearch() {
   width: 100%;
   height: 60px;
   /* min-height: 60px; */
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   display: flex;
 }
 .search__wrapper {

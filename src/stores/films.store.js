@@ -5,6 +5,7 @@ export const useFilmStore = defineStore("films", {
   state: () => ({
     films: [],
     filmsFiltered: [],
+    film: {},
     search: "",
     error: null,
     loading: true,
@@ -14,8 +15,10 @@ export const useFilmStore = defineStore("films", {
   /** This property get thing of state and not mutate the state */
   getters: {
     filterFilms: (state) => {
-      return (field) =>
-        state.films.filter((film) => {
+      return (field) => {
+        console.log('field', field);
+        console.log('films', state.films);
+        return state.films.filter((film) => {
           return (
             film.image === field ||
             film.title === field ||
@@ -24,6 +27,7 @@ export const useFilmStore = defineStore("films", {
             film.rt_score === field
           );
         });
+      };
     },
 
     getLengthState: (state) => {
@@ -34,7 +38,14 @@ export const useFilmStore = defineStore("films", {
   actions: {
     async getAllFilms() {
       this.films = await Films.getfilms();
-      console.log(this.films);
+      this.setLoading(false);
+      // this.setSearch([]);
+      this.setNotFound(false);
+    },
+
+    async getFilm(id) {
+      this.film = await Films.getFilm(id);
+      console.log(this.film);
     },
 
     setLoading(value) {
