@@ -3,20 +3,24 @@ import AtomLogo from "../../atoms/Logo/AtomLogo.vue";
 import MoleculeInputIcon from "../../molecules/InputIcon/MoleculeInputIcon.vue";
 import AtomInput from "../../atoms/Input/AtomInput.vue";
 import AtomContainer from "../../atoms/Container/AtomContainer.vue";
-import { useRouter} from "vue-router";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-function redirectUrl(){
-  router.push('/');
+function redirectUrl() {
+  router.push("/");
 }
-
 </script>
 <template>
   <header class="header-section">
     <AtomContainer>
       <div class="header-section__wrapper">
-        <AtomLogo class="logo" width="300px" height="80px" @click="redirectUrl"></AtomLogo>
+        <AtomLogo
+          class="logo"
+          width="300px"
+          height="80px"
+          @click="redirectUrl"
+        ></AtomLogo>
         <MoleculeInputIcon>
           <AtomInput />
         </MoleculeInputIcon>

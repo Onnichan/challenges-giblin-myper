@@ -1,5 +1,5 @@
 <script setup>
-import {useRouter, useRoute} from 'vue-router';
+import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
@@ -11,12 +11,11 @@ const props = defineProps({
   },
 });
 
-function redirectFilm(id){
+function redirectFilm(id) {
   // console.log(`${route.path}films/${id}`);
   const redirect = `${route.path}film/${id}`;
   router.push(redirect);
 }
-
 </script>
 
 <template>

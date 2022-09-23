@@ -177,7 +177,7 @@ defineProps({
   fill: rgb(28, 222, 28);
 }
 
-.logo:hover{
+.logo:hover {
   cursor: pointer;
 }
 </style>

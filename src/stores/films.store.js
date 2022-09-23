@@ -16,8 +16,8 @@ export const useFilmStore = defineStore("films", {
   getters: {
     filterFilms: (state) => {
       return (field) => {
-        console.log('field', field);
-        console.log('films', state.films);
+        console.log("field", field);
+        console.log("films", state.films);
         return state.films.filter((film) => {
           return (
             film.image === field ||
