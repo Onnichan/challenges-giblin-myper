@@ -1,9 +1,7 @@
 <script setup>
 import { useRouter } from "vue-router";
-import { ref } from "vue";
 import { useFilmStore } from "../../../stores/films.store";
 
-const search = ref("");
 const store = useFilmStore();
 
 defineProps({
