@@ -13,7 +13,7 @@ const props = defineProps({
 
 function redirectFilm(id) {
   // console.log(`${route.path}films/${id}`);
-  const redirect = `${route.path}film/${id}`;
+  const redirect = `/film/${id}`;
   router.push(redirect);
 }
 </script>
