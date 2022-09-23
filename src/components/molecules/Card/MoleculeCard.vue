@@ -1,14 +1,25 @@
 <script setup>
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+
 const props = defineProps({
   film: {
     type: Object,
     required: true,
   },
 });
+
+function redirectFilm(id) {
+  // console.log(`${route.path}films/${id}`);
+  const redirect = `${route.path}film/${id}`;
+  router.push(redirect);
+}
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="redirectFilm(props.film.id)">
     <div class="card-content">
       <div class="card-media">
         <img

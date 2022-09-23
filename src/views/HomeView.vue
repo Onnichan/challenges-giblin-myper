@@ -4,24 +4,20 @@ import { onMounted } from "vue";
 import { useFilmStore } from "../stores/films.store";
 
 const store = useFilmStore();
-const { getAllFilms, setLoading } = useFilmStore();
+const { getAllFilms } = useFilmStore();
 
 onMounted(() => {
-  if (!store.searching) {
-    getAllFilms();
-    setLoading(false);
+  getAllFilms();
+  if (store.search.length > 0) {
+    store.setSearch("");
   }
 });
-
-function filtered() {
-  return store.filmsFiltered.length > 0 ? store.filmsFiltered : store.films;
-}
 </script>
 <template>
   <span v-if="store.loading">...loading</span>
   <TemplateHome
     v-else
-    :data="filtered()"
+    :data="store.films"
     :notFound="store.notFound"
   ></TemplateHome>
 </template>
