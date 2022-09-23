@@ -1,11 +1,13 @@
 import { ApiRequest } from "./";
 
-const getfilms = (limit = 40) => {
-  return ApiRequest.get(`films?limit=${limit}`);
+const getfilms = (limit = 250) => {
+  return ApiRequest.get("films", {
+    params: { limit },
+  });
 };
 
 const getFilm = (id) => {
-  return ApiRequest.get(`film/${id}`);
+  return ApiRequest.get(`films/${id}`);
 };
 
 export default {

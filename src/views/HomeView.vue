@@ -7,16 +7,17 @@ const store = useFilmStore();
 const { getAllFilms } = useFilmStore();
 
 onMounted(() => {
-  if (!store.searching) {
-    getAllFilms();
+  getAllFilms();
+  if (store.search.length > 0) {
+    store.setSearch("");
   }
 });
-
-function filtered() {
-  return store.filmsFiltered.length > 0 ? store.filmsFiltered : store.films;
-}
 </script>
 <template>
-  <!-- <span v-if="store.loading">...loading</span> -->
-  <TemplateHome :data="filtered()" :notFound="store.notFound"></TemplateHome>
+  <span v-if="store.loading">...loading</span>
+  <TemplateHome
+    v-else
+    :data="store.films"
+    :notFound="store.notFound"
+  ></TemplateHome>
 </template>

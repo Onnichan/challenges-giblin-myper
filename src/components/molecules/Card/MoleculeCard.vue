@@ -1,14 +1,25 @@
 <script setup>
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+
 const props = defineProps({
   film: {
     type: Object,
     required: true,
   },
 });
+
+function redirectFilm(id) {
+  // console.log(`${route.path}films/${id}`);
+  const redirect = `${route.path}film/${id}`;
+  router.push(redirect);
+}
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="redirectFilm(props.film.id)">
     <div class="card-content">
       <div class="card-media">
         <img
@@ -28,6 +39,9 @@ const props = defineProps({
 <style>
 .card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card:hover {
@@ -36,7 +50,7 @@ const props = defineProps({
 
 .card-content {
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .card-image {
@@ -45,10 +59,26 @@ const props = defineProps({
   border-radius: 4px;
 }
 
+.card-media::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  cursor: pointer;
+  transition: background-color 1s ease-in-out;
+}
+.card-media:hover::after {
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
 .card-content__director,
 .card-content__year,
 .card-content__score {
   position: absolute;
+  z-index: 10;
 }
 
 .card-content__director {
@@ -68,6 +98,14 @@ const props = defineProps({
 
 .card-title {
   /* padding: 20px; */
+  display: block;
   margin: 0 auto;
+  color: rgba(245, 245, 245, 0.758);
+}
+
+@media (min-width: 750px) {
+  .card-content {
+    font-size: 0.8rem;
+  }
 }
 </style>
